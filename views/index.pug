@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  if(user)
+    h1 Welcome, #{user.username}!
+    | #{message}
+    form(method='POST' action='/sendmessage')
+      br
+      div.form-group
+        label(for='title') Title: 
+          input(type='text' name='title' required='true')
+      div.form-group
+        label(for='text') Text: 
+          input(type='text' name='text' required='true')
+      button.btn.btn-primary(type='submit') Send message
+  else
+    h1 Welcome!
+    a Login or register to send messages!
+  if(!user || user.membership=='guest')
+    each message in messages
+      #messagebox
+        h3 #{message.title}
+        p #{message.text}
+  else if(user.membership=='admin')
+    each message in messages
+      #messagebox
+        form(method='POST' action='deletemessage')
+          h3 #{message.author.username} (#{message.timestamp_formatted}): 
+            |#{message.title}
+            input(type='hidden' name='messageid' value=message._id)
+            button.btn.btn-danger.btn-deletemessage(type='submit') Delete message
+        p #{message.text}
+  else
+    each message in messages
+      #messagebox
+        h3 #{message.author.username} (#{message.timestamp_formatted}): #{message.title}
+        p #{message.text}

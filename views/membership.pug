@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Change membership
+    | #{message}
+    form(method='POST' action='')
+        div.form-group
+          label(for='membership password') Membership password: 
+            input#form-control(type='password' name='membershippassword')
+        button.btn.btn-success(type='submit') Confirm

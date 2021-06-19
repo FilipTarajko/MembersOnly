@@ -1,0 +1,130 @@
+:root{
+	--externalBgColor: white;
+	--mainBgColor: cyan;
+	--barBgColor: white;
+	--fontColor:white;
+	--linkColor:#bcf;
+	--hoverColor: #8af;
+
+  
+	--externalBgColor: #2a2a2a;
+	--mainBgColor: #444;
+	--barBgColor: #777;
+	--darkbarBgColor: #666;
+	--fontColor:white;
+	--linkColor:#bcf;
+	--hoverColor: #8af;
+ 
+
+	--externalBorderColor: var(--barBgColor);
+	--internalBorderColor: var(--externalBgColor);
+}
+
+button{
+	font-size:20px;
+  background-color: var(--externalBgColor);
+  margin: 0 6px;
+}
+
+.btn{
+  padding: 4px;
+}
+
+#storetitle{
+	margin: 15px;
+	font-size: 60px;
+	text-align: center;
+}
+
+
+#footer{
+	font-weight: bold;
+	margin: 15px;
+	color: var(--footerFontColor);
+	font-size: 20px;
+	background-color: var(--barBgColor);
+	border: 1px solid var(--internalBorderColor);
+	padding: 20px;
+}
+
+*{
+	color: var(--fontColor);
+	padding:0;
+	margin:0;
+}
+
+article img{
+	float:left;
+	padding: 10px;
+}
+
+body{
+	background-color: var(--externalBgColor);
+}
+
+#messagebox{
+	padding: 10px;
+	margin: 20px 0px;
+	font-size: 16px;
+	box-sizing: border-box;
+	border: 1px solid var(--internalBorderColor);
+	background-color:var(--barBgColor);
+}
+
+a:hover{
+	color: var(--hoverColor);
+	text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+	color:var(--linkColor);
+}
+
+.contents{
+	background-color: var(--mainBgColor);
+	border: 5px solid var(--externalBorderColor);
+	box-sizing: border-box;
+}
+
+#all{
+	width: min(95vw,800px);
+	float: center;
+	margin: 0px auto;
+	padding-top: 20px;
+}
+
+#navbar{
+  margin: 30px 0;
+  padding: 20px;
+}
+
+#mainpanel{
+	margin: 30px 0;
+	padding: 20px;
+}
+
+* .form-group{
+	color: black;
+}
+
+form{
+	padding-bottom: 20px;
+  color: black;
+}
+
+[type=text], [type=password]{
+  color: black;
+}
+
+.btn-deletemessage{
+	float: right;
+}
+
+.red{
+	color: red;
+}
+
+.green{
+	color: rgb(106, 165, 18);
+}

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Log in
+    h2.green #{message}
+    form(method='POST' action='')
+        div.form-group
+            label(for='username') Username: 
+                input(type='text' name='username' required='true')
+        div.form-group
+            label(for='password') Password: 
+                input(name='password' type='password' required='true')
+        button.btn.btn-success(type='submit') Log in

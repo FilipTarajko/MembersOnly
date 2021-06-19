@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Register
+  h2.red #{message}
+  form(method='POST' action='')
+    div.form-group
+      label(for='username') Username: 
+        input(type='text' name='username' required='true')
+    div.form-group
+      label(for='firstname') First name: 
+        input(type='text' name='firstname' required='true')
+    div.form-group
+      label(for='lastname') Last name: 
+        input(type='text' name='lastname' required='true')
+    div.form-group
+      label(for='password') Password: 
+        input(name='password' type='password' required='true')
+    div.form-group
+      label(for='confirmPassword') Password: 
+        input(name='confirmPassword' type='password' required='true')
+    button.btn.btn-success(type='submit') Register

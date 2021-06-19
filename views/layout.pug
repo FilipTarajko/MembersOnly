@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='UTF-8')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    #all
+      header#header.contents
+        #storetitle
+          a(href='/') Members Only
+      #navbar.contents
+        if(user)
+          | User: #{user.username} (#{newrole || user.membership})
+          br
+          br
+        else
+          | User: not logged in
+          br
+          br
+        a(href='/')
+          button.btn.btn-primary(type='button') Main page
+        if(user)
+          a(href='/membership')
+            button.btn.btn-primary(type='button') Change membership
+          a(href='/logout')
+            button.btn.btn-danger(type='button') Log out
+
+        else
+          a(href='/login')
+            button.btn.btn-success(type='button') Log in
+          a(href='/register')
+            button.btn.btn-success(type='button') Register
+      #mainpanel.contents
+        block content
+      footer.contents
+        #footer author: 
+          a(href='https://github.com/FilipTarajko') Filip Tarajko
